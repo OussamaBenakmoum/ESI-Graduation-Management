@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!-- **************************************************************************** -->
+
+<record id="demandes_treeview" model="ir.ui.view" >
+ <field name="name">graduation.demande.tree</field> 
+ <field name="model">graduation.demande</field>
+ <field name="arch" type="xml">
+    <tree>
+        <field name="id"/>
+        <field name="firststudent"/>
+        <field name="secondstudent"/>
+        <field name="supervisor"/>
+    </tree>
+ </field>
+</record> 
+
+<record id="afficher_demandes_action" model="ir.actions.act_window" >
+ <field name="name">Les demandes déposées</field> 
+ <field name="type">ir.actions.act_window</field>
+ <field name="res_model">graduation.demande</field>
+ <field name="view_mode">tree,kanban,form</field>
+</record> 
+
+<!-- **************************************************************************** -->
+<record id="creneaux_treeview" model="ir.ui.view" >
+ <field name="name">graduation.creneau.tree</field> 
+ <field name="model">graduation.creneau</field>
+ <field name="arch" type="xml">
+    <tree>
+        <field name="id"/>
+        <field name="description"/>
+    </tree>
+ </field>
+</record> 
+
+<record id="afficher_creneaux_action" model="ir.actions.act_window" >
+ <field name="name">Les demandes déposées</field> 
+ <field name="type">ir.actions.act_window</field>
+ <field name="res_model">graduation.creneau</field>
+ <field name="view_mode">tree,kanban,form</field>
+</record> 
+<!-- **************************************************************************** -->
+
+<menuitem id="GraduationManager" name="Soutenances ESI" sequence="10"/>
+<menuitem id="liste_demande_root" name="Demandes de Soutenance" parent="GraduationManager" action="afficher_demandes_action" sequence="10"/>
+<menuitem id="liste_creneau_root" name="Créneaux de Soutenance" parent="GraduationManager" action="afficher_creneaux_action" sequence="10"/>
+
+
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_creneau_admin,access.graduation.creneau,model_graduation_creneau,,1,1,1,1
+access_demande_admin,access.graduation.demande,model_graduation_demande,,1,1,1,1

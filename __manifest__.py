@@ -21,7 +21,10 @@
     'depends': [],
 
     # always loaded
-    'data': [],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/demande.xml'
+    ],
     # only loaded in demonstration mode
     'demo': [],
 
