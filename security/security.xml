@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="group_Enseignant" model="res.groups">
+        <field name="name">Enseignant</field>
+</record>
+
+<record id="demande_record_rule" model="ir.rule">
+        <field name="name">see only  ses demandes</field>
+        <field name="model_id" ref="model_graduation_demande"/>
+        <field name="domain_force">[]</field>
+        <field name="groups" eval="[(4,ref('group_Enseignant'))]"/>
+
+</record>
+
+
+</odoo>
