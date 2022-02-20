@@ -17,7 +17,7 @@ class Demande(models.Model):
     projecttitle = fields.Char(string="Titre projet", required=True)
     linkpfe = fields.Char(string="Lien vers le PFE", required=True)
     teacher = fields.Many2one('res.users','Encadrant', default=lambda self: self.env.user, readonly=True)
-    teachermark = fields.Char(string="Note de enadrant", required=True)
+    teachermark = fields.Float(string="Note de enadrant", required=True)
     date_prevue = fields.Date(string="Date prévue")
 
 
@@ -26,5 +26,14 @@ class Creneau(models.Model):
     _inherit = 'graduation.demande'
     _description = "créneaux des soutenances"
 
-    description = fields.Char(string="description creneau", required=True)
-    descriptiondeux = fields.Char(string="description deux creneau", required=True)
+
+    premierjury = fields.Char(string="Premier jury", required=True)
+    premierenote = fields.Float(string="Première note", required=True)
+
+    deuxiemejury = fields.Char(string="Deuxième jury", required=True)
+    deuxiemenote = fields.Float(string="Deuxième note", required=True)
+
+    troisiemejury = fields.Char(string="Troisième jury", required=True)
+    troisiemenote = fields.Float(string="Troisièmeième note", required=True)
+
+    date_soutenance = fields.Date(string="Date Soutenance")

@@ -62,15 +62,82 @@
 </record> 
 
 <!-- **************************************************************************** -->
- <record id="creneaux_treeview" model="ir.ui.view" >
+
+
+<record id="creneaux_formview" model="ir.ui.view" >
+ <field name="name">graduation.creneau.form</field> 
+ <field name="model">graduation.creneau</field>
+ <field name="arch" type="xml">
+    <form>
+        <sheet>
+            <group>
+                <field name="projecttitle"/>
+            </group>
+            <group>
+                <field name="linkpfe"/>
+            </group>
+            <group>
+                <field name="date_soutenance"/>
+            </group>
+            <group>
+                <group>
+                    <field name="firststudent"/>
+                </group>
+                <group>
+                    <field name="checkbinome"/>
+                </group>
+                <group>
+                    <field name="secondstudent" attrs="{'invisible':[('checkbinome', '!=', True)]}"/>
+                </group>
+            </group>
+            <group>
+                <group>
+                    <field name="teacher"/>
+                </group>
+                <group>
+                    <field name="teachermark"/>
+                </group>
+            </group>
+            <group>
+                <group>
+                    <field name="premierjury"/>
+                </group>
+                <group>
+                    <field name="premierenote"/>
+                </group>
+            </group>
+            <group>
+                <group>
+                    <field name="deuxiemejury"/>
+                </group>
+                <group>
+                    <field name="deuxiemenote"/>
+                </group>
+            </group>
+            <group>
+                <group>
+                    <field name="troisiemejury"/>
+                </group>
+                <group>
+                    <field name="troisiemenote"/>
+                </group>
+            </group>
+        </sheet>
+    </form>
+ </field>
+</record>
+
+
+
+<record id="creneaux_treeview" model="ir.ui.view" >
  <field name="name">graduation.creneau.tree</field> 
  <field name="model">graduation.creneau</field>
  <field name="arch" type="xml">
     <tree>
         <field name="id"/>
-        <field name="description"/> 
-        <field name="firststudent"/>
-        <field name="descriptiondeux"/>
+        <field name="projecttitle"/>
+        <field name="date_soutenance"/>
+        <field name="teacher"/>
     </tree>
  </field>
 </record> 
@@ -81,6 +148,9 @@
  <field name="res_model">graduation.creneau</field>
  <field name="view_mode">tree,kanban,form</field>
 </record>
+
+
+
 
 <!-- **************************************************************************** -->
 
