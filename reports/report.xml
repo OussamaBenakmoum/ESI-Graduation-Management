@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <report 
+        id = "report_soutenance"
+        string = "fiche PV soutenance"
+        model = "graduation.creneau"
+        report_type="qweb-pdf"
+        name="testrapport2.report_patient"
+        file="testrapport2.report_patient"
+    />
+        
+
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="report_patient">
+    <img class="img" src="/testrapport2/reports/pvsoutenance_template.xml" style="height:45%;width:100%;" />
+    
+
+    </template> 
+
+</odoo>

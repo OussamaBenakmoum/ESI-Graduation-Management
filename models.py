@@ -27,6 +27,8 @@ class Creneau(models.Model):
     _description = "créneaux des soutenances"
 
 
+    teacher = fields.Many2one('res.users','Encadrant')
+
     premierjury = fields.Char(string="Premier jury", required=True)
     premierenote = fields.Float(string="Première note", required=True)
 
@@ -37,3 +39,5 @@ class Creneau(models.Model):
     troisiemenote = fields.Float(string="Troisièmeième note", required=True)
 
     date_soutenance = fields.Date(string="Date Soutenance")
+
+
