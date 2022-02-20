@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "ESI management second",
+    'name': "ESI management third",
 
     'summary': """esi gestion""",
 

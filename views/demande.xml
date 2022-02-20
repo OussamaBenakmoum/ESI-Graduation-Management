@@ -2,15 +2,54 @@
 <odoo>
 <!-- **************************************************************************** -->
 
+<record id="demandes_formview" model="ir.ui.view" >
+ <field name="name">graduation.demande.form</field> 
+ <field name="model">graduation.demande</field>
+ <field name="arch" type="xml">
+    <form>
+        <sheet>
+            <group>
+                <field name="projecttitle"/>
+            </group>
+            <group>
+                <field name="linkpfe"/>
+            </group>
+            <group>
+                <field name="date_prevue"/>
+            </group>
+            <group>
+                <group>
+                    <field name="firststudent"/>
+                </group>
+                <group>
+                    <field name="checkbinome"/>
+                </group>
+                <group>
+                    <field name="secondstudent" attrs="{'invisible':[('checkbinome', '!=', True)]}"/>
+                </group>
+            </group>
+            <group>
+                <group>
+                    <field name="teacher"/>
+                </group>
+                <group>
+                    <field name="teachermark"/>
+                </group>
+            </group>
+        </sheet>
+    </form>
+ </field>
+</record>
+
 <record id="demandes_treeview" model="ir.ui.view" >
  <field name="name">graduation.demande.tree</field> 
  <field name="model">graduation.demande</field>
  <field name="arch" type="xml">
     <tree>
         <field name="id"/>
-        <field name="firststudent"/>
-        <field name="secondstudent"/>
-        <field name="supervisor"/>
+        <field name="projecttitle"/>
+        <field name="date_prevue"/>
+        <field name="teacher"/>
     </tree>
  </field>
 </record> 
@@ -29,7 +68,7 @@
  <field name="arch" type="xml">
     <tree>
         <field name="id"/>
-        <field name="description"/>
+        <field name="description"/> 
         <field name="firststudent"/>
         <field name="descriptiondeux"/>
     </tree>

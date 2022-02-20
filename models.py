@@ -1,3 +1,4 @@
+from email.policy import default
 from odoo import models, fields, api
 from datetime import datetime, timedelta
 
@@ -8,11 +9,15 @@ class Demande(models.Model):
     _description = "demandes de soutenance"
 
     firststudent = fields.Char(string="Premier étudiant", required=True)
-    secondstudent = fields.Char(string="Deuxieme étudiant", required=False)
+    checkbinome = fields.Boolean('Projet Binome ?', default=False)
+    if checkbinome :
+        secondstudent = fields.Char(string="Deuxieme étudiant", required=False)
+    else :
+        secondstudent = None
     projecttitle = fields.Char(string="Titre projet", required=True)
     linkpfe = fields.Char(string="Lien vers le PFE", required=True)
-    supervisor = fields.Char(string="Nom promoteur", required=True)
-    supervisormark = fields.Char(string="Note de sperviseur", required=True)
+    teacher = fields.Many2one('res.users','Encadrant', default=lambda self: self.env.user, readonly=True)
+    teachermark = fields.Char(string="Note de enadrant", required=True)
     date_prevue = fields.Date(string="Date prévue")
 
 
