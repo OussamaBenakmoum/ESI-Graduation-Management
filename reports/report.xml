@@ -7,8 +7,8 @@
         string = "fiche PV soutenance"
         model = "graduation.creneau"
         report_type="qweb-pdf"
-        name="testrapport2.report_patient"
-        file="testrapport2.report_patient"
+        name="testrapport3.report_patient"
+        file="testrapport3.report_patient"
     />
         
 

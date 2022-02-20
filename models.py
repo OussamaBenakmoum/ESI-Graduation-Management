@@ -19,7 +19,7 @@ class Demande(models.Model):
     teacher = fields.Many2one('res.users','Encadrant', default=lambda self: self.env.user, readonly=True)
     teachermark = fields.Float(string="Note de enadrant", required=True)
     date_prevue = fields.Date(string="Date prévue")
-
+    user_id = fields.Many2one('res.users', 'Demandeur',default=lambda self: self.env.user)
 
 class Creneau(models.Model):
     _name = 'graduation.creneau'

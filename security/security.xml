@@ -5,4 +5,11 @@
         <field name="name">Enseignant</field>
 </record>
 
+<record model="ir.rule" id="demande_rule">
+<field name="name">Un demandeur ne peut voir que ses propres demandes</field>
+<field name="model_id" ref="model_graduation_demande"/>
+<field name="domain_force">[('user_id','=',user.id)]</field>
+<field name="groups" eval="[(4,ref('group_Enseignant'))]"/>
+</record>
+
 </odoo>
