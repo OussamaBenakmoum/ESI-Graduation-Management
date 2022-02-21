@@ -7,16 +7,16 @@
     string = "Rapport Demande Soutenance"
     model = "graduation.demande"
     report_type="qweb-pdf"
-    name="my_graduation_esi.rapport_demande_id"
-    file="my_graduation_esi.rapport_demande_id"
+    name="testfin3.rapport_demande_id"
+    file="testfin3.rapport_demande_id"
     />
     <report 
     id = "rapport_pv_id"
     string = "Fiche PV soutenance"
     model = "graduation.creneau"
     report_type="qweb-pdf"
-    name="my_graduation_esi.rapport_pv_id"
-    file="my_graduation_esi.rapport_pv_id"
+    name="testfin3.rapport_pv_id"
+    file="testfin3.rapport_pv_id"
     />
    
 

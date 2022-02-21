@@ -18,20 +18,18 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': [],
+    'depends': ['mail'],
 
     # always loaded
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/demande.xml',
-        'reports/demande_soutenance_template.xml',
-        'reports/pvsoutenance_template.xml',
         'reports/report.xml'
     ],
     # only loaded in demonstration mode
     'demo': [],
-    'images': ['report/header.png'],
+
     'installable': True,
     'application': True,
     'auto_install': False,

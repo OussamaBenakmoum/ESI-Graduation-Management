@@ -2,6 +2,23 @@
 <odoo>
 <!-- **************************************************************************** -->
 
+
+
+<record id="demandes_treeview" model="ir.ui.view" >
+ <field name="name">graduation.demande.tree</field> 
+ <field name="model">graduation.demande</field>
+ <field name="arch" type="xml">
+    <tree>
+        <field name="id"/>
+        <field name="projecttitle"/>
+        <field name="date_prevue"/>
+        <field name="teacher"/>
+    </tree>
+ </field>
+</record> 
+
+
+<!-- **************************************************************************** -->
 <record id="demandes_formview" model="ir.ui.view" >
  <field name="name">graduation.demande.form</field> 
  <field name="model">graduation.demande</field>
@@ -37,32 +54,14 @@
                 </group>
             </group>
         </sheet>
+        <div class="oe_chatter">
+            <field name="message_follower_ids"/>
+            <field name="message_ids"/>
+        </div>
+
     </form>
  </field>
 </record>
-
-<record id="demandes_treeview" model="ir.ui.view" >
- <field name="name">graduation.demande.tree</field> 
- <field name="model">graduation.demande</field>
- <field name="arch" type="xml">
-    <tree>
-        <field name="id"/>
-        <field name="projecttitle"/>
-        <field name="date_prevue"/>
-        <field name="teacher"/>
-    </tree>
- </field>
-</record> 
-
-<record id="afficher_demandes_action" model="ir.actions.act_window" >
- <field name="name">Les demandes reçues</field> 
- <field name="type">ir.actions.act_window</field>
- <field name="res_model">graduation.demande</field>
- <field name="view_mode">tree,kanban,form</field>
-</record> 
-
-<!-- **************************************************************************** -->
-
 
 <record id="creneaux_formview" model="ir.ui.view" >
  <field name="name">graduation.creneau.form</field> 
@@ -148,6 +147,13 @@
  <field name="res_model">graduation.creneau</field>
  <field name="view_mode">tree,kanban,form</field>
 </record>
+
+<record id="afficher_demandes_action" model="ir.actions.act_window" >
+ <field name="name">Les demandes créées</field> 
+ <field name="type">ir.actions.act_window</field>
+ <field name="res_model">graduation.demande</field>
+ <field name="view_mode">tree,kanban,form</field>
+</record> 
 
 
 

@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_creneau_admin,access.graduation.creneau,model_graduation_creneau,,1,1,1,1
-access_demande_admin,access.graduation.demande,model_graduation_demande,,1,1,1,1
+access_demande_admin,access.graduation.demande,model_graduation_demande,,1,0,0,1
 access_demande_enseignant,access.graduation.demande,model_graduation_demande,group_Enseignant,1,1,1,1
-access_creneau_enseignant,access.graduation.creneau,model_graduation_creneau,group_Enseignant,1,1,1,1
+access_creneau_enseignant,access.graduation.creneau,model_graduation_creneau,group_Enseignant,1,0,0,1

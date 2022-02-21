@@ -7,6 +7,8 @@ from datetime import datetime, timedelta
 class Demande(models.Model):
     _name = 'graduation.demande'
     _description = "demandes de soutenance"
+    _inherit=["mail.thread"]
+
 
     firststudent = fields.Char(string="Premier étudiant", required=True)
     checkbinome = fields.Boolean('Projet Binome ?', default=False)
@@ -26,8 +28,6 @@ class Creneau(models.Model):
     _inherit = 'graduation.demande'
     _description = "créneaux des soutenances"
 
-
-    teacher = fields.Many2one('res.users','Encadrant')
 
     premierjury = fields.Char(string="Premier jury", required=True)
     premierenote = fields.Float(string="Première note", required=True)
