@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="rapport_demande_id">
+        <t t-call="web.basic_layout">
+            <div>
+                <h4 style="text-align: center;">الجمهورية الجزائرية الديمقراطية الشعبية</h4>
+                <h4 style="text-align: center;">Republique Algerienne Democratique et Populaire</h4>
+                <h4 style="text-align: center;">وزارة التعليم العالي و البحث العلمي</h4>
+                <h4 style="text-align: center;">Ministere de l'Enseignement Superieur et de la Recherche Scientifique</h4>
+                <hr style="border-color: black; color:black;" />
+                <table style="border-collapse: collapse; width: 100%; height: 28px; border-color: white;" border="1">
+                    <tbody>
+                        <tr style="height: 10px;">
+                            <td style="width: 50%; height: 10px;">
+                                <img t-att-src="'/graduation_esi/static/src/img/esi_logo.png'" alt="Esi ALger" width="200" height="83" />
+                            </td>
+                            <td style="width: 50%; height: 10px;">
+                                <p style="text-align: right;">المدرسة الوطنية العليا للاعلام الالي</p>
+                                <p style="text-align: right;">Ecole nationale Superieure d'Informatique</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 style="text-align: center;">Liste des demandes</h2>
+                <br />
+                <br />
+                <t t-set="teacher_count" t-value="0" />
+                <t t-set="teacher_name" t-value="newer" />
+                <t t-foreach="docs" t-as="demande">
+                    <div t-if="demande.teacher != teacher_name">
+                        <t t-set="teacher_name" t-value="demande.teacher" />
+                        <t t-set="teacher_count" t-value="teacher_count + 1" />
+                        <h4>
+                            Enseignant N=
+                            <t t-esc="teacher_count"/>
+                            :
+                            <span t-field="demande.teacher" />
+                        </h4>
+                        <br />
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th name="th_titre_projet" class="text-center">
+                                        <span>Titre projet</span>
+                                    </th>
+                                    <th name="th_first_student" class="text-center">
+                                        <span>Premier étudiant</span>
+                                    </th>
+                                    <th name="th_second_student" class="text-center">
+                                        <span>Deuxième étudiant</span>
+                                    </th>
+                                    <th name="th_link_pfe" class="text-center">
+                                        <span>Lien vers le PFE</span>
+                                    </th>
+                                    <th name="th_date_prv" class="text-center">
+                                        <span>Date prevue</span>
+                                    </th>
+
+                                    <th name="th_note" class="text-center">
+                                        <span>Note</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <t t-foreach="docs" t-as="teacherdemande">
+                                <tr t-if="teacherdemande.teacher == teacher_name">
+                                    <td class="text-center">
+                                        <span t-field="teacherdemande.projecttitle" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="teacherdemande.firststudent" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="teacherdemande.secondstudent" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="teacherdemande.linkpfe" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="teacherdemande.date_prevue" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="teacherdemande.teachermark" />
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                        <br />
+                        <br />
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,10 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_patient">
-    <img class="img" src="/testrapport3/reports/header.png" style="height:45%;width:100%;" />
 
+    <template id="rapport_pv_id">
+        <t t-foreach="docs" t-as="pv">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <h4 style="text-align: center;">الجمهورية الجزائرية الديمقراطية الشعبية</h4>
+                    <h4 style="text-align: center;">Republique Algerienne Democratique et Populaire</h4>
+                    <h4 style="text-align: center;">وزارة التعليم العالي و البحث العلمي</h4>
+                    <h4 style="text-align: center;">Ministere de l'Enseignement Superieur et de la Recherche Scientifique</h4>
+                    <hr style="border-color: black; color:black;" />
+                    <table style="border-collapse: collapse; width: 100%; height: 28px; border-color: white;" border="1">
+                        <tbody>
+                            <tr style="height: 10px;">
+                                <td style="width: 50%; height: 10px;">
+                                    <img t-att-src="'/graduation_esi/static/src/img/esi_logo.png'" alt="Esi ALger" width="200" height="83" />
+                                </td>
+                                <td style="width: 50%; height: 10px;">
+                                    <p style="text-align: right;">المدرسة الوطنية العليا للاعلام الالي</p>
+                                    <p style="text-align: right;">Ecole nationale Superieure d'Informatique</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h1 style="text-align: center;">PV Soutenance</h1>
+                    <br/>
+                    <br/>
+                    <h4>Titre projet :<span t-field="pv.projecttitle" /></h4>
+                    <h4>Premier étudiant :<span t-field="pv.firststudent" /></h4>
+                    <h4 t-if="pv.secondstudent">Deuxieme étudiant :<span t-field="pv.secondstudent" /></h4>
+                    <h4>Encadrant :<span t-field="pv.teacher" /><pre/>Note :<span t-field="pv.teachermark" /></h4>
+                    <br/>
+                    <br/>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th name="th_juries" class="text-center">
+                                    <span>Juries</span>
+                                </th>
+                                <th name="th_notes" class="text-center">
+                                    <span>Notes</span>
+                                </th>
+                            </tr>
+                        </thead>
 
-    </template> 
+                            <tr>
+                                <td class="text-center">
+                                    <span t-field="pv.premierjury" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="pv.premierenote" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">
+                                    <span t-field="pv.deuxiemejury" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="pv.deuxiemenote" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">
+                                    <span t-field="pv.troisiemejury" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="pv.troisiemenote" />
+                                </td>
+                            </tr>
+                        
+                    </table>
+
+                </div>
+            </t>
+        </t>
+    </template>
 
 </odoo>

@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-
+    
     <report 
-        id = "report_soutenance"
-        string = "fiche PV soutenance"
-        model = "graduation.creneau"
-        report_type="qweb-pdf"
-        name="testrapport3.report_patient"
-        file="testrapport3.report_patient"
+    id = "rapport_demande_id"
+    string = "Rapport Demande Soutenance"
+    model = "graduation.demande"
+    report_type="qweb-pdf"
+    name="my_graduation_esi.rapport_demande_id"
+    file="my_graduation_esi.rapport_demande_id"
     />
-        
+    <report 
+    id = "rapport_pv_id"
+    string = "Fiche PV soutenance"
+    model = "graduation.creneau"
+    report_type="qweb-pdf"
+    name="my_graduation_esi.rapport_pv_id"
+    file="my_graduation_esi.rapport_pv_id"
+    />
+   
+
 
 </odoo>
